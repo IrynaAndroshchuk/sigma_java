@@ -7,8 +7,8 @@ public class Organization {
     String region;
     String country;
     String city;
-    boolean isActive;
+    Boolean isActive;
     String direction;
-    int numberOfOffices;
+    Integer numberOfOffices;
     Employee employee;
 }
