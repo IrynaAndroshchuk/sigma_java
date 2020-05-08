@@ -1,4 +1,4 @@
-package lesson1;
+package com.sigmaproject.domain.domain;
 
 public class Organization {
     String name;
