@@ -1,4 +1,4 @@
-package com.sigmaproject.domain;
+package com.sigmaproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

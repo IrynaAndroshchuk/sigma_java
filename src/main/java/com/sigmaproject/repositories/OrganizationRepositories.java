@@ -1,4 +1,4 @@
-package com.sigmaproject.domain.repositories;
+package com.sigmaproject.repositories;
 
 public interface OrganizationRepositories {
 }

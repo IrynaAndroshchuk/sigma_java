@@ -1,4 +1,4 @@
-package com.sigmaproject.domain.contollers;
+package com.sigmaproject.contollers;
 
 public interface OrganizationController {
 }

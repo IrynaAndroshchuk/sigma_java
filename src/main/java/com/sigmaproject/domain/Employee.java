@@ -1,4 +1,4 @@
-package com.sigmaproject.domain.domain;
+package com.sigmaproject.domain;
 
 public class Employee {
     String name;
