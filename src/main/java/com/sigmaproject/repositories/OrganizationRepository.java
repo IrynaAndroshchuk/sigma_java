@@ -1,4 +1,4 @@
 package com.sigmaproject.repositories;
 
-public interface EployeeRepositories {
+public interface OrganizationRepository {
 }

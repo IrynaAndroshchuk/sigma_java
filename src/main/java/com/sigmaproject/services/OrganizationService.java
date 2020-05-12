@@ -1,4 +1,4 @@
 package com.sigmaproject.services;
 
-public interface EmployeeServices {
+public class OrganizationService {
 }

@@ -1,4 +1,4 @@
 package com.sigmaproject.contollers;
 
-public interface OrganizationController {
+public class OrganizationController {
 }
