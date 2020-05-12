@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group 'sigma_java'
+group 'sigmajava'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = '11'
