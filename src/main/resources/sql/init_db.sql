@@ -8,7 +8,7 @@ CREATE TABLE organizations
     region          VARCHAR(255),
     country         VARCHAR(255) NOT NULL,
     city            VARCHAR(255) NOT NULL,
-    isActive        BOOLEAN      NOT NULL,
+    is_active        BOOLEAN      NOT NULL,
     direction       VARCHAR(255),
     numberOfOffices INT
 );
