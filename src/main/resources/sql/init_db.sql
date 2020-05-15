@@ -3,7 +3,7 @@ CREATE TABLE organizations
     id              SERIAL       NOT NULL
         CONSTRAINT organization_key PRIMARY KEY,
     name            VARCHAR(255) NOT NULL,
-    phoneNumber     VARCHAR(255),
+    phone_number     VARCHAR(255),
     address         VARCHAR(255),
     region          VARCHAR(255),
     country         VARCHAR(255) NOT NULL,
