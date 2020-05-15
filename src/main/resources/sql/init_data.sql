@@ -1,4 +1,4 @@
-INSERT INTO organizations (name, phone_number, address, region, country, city, is_active, direction, numberOfOffices)
+INSERT INTO organizations (name, phone_number, address, region, country, city, is_active, direction, number_of_offices)
 VALUES ('SG', '+380985238965', 'Naulova 12', 'Lviv', 'Ukraine', 'Lviv', true, 'Bank', 11),
        ('A-B', '+380985838925', 'Trava 51', 'Lviv', 'Ukraine', 'Lviv', true, 'Bank', 23),
        ('Pomb', '+3806385238965', 'Kilana 12', 'Lviv', 'Ukraine', 'Lviv', false, 'Bank', 11);

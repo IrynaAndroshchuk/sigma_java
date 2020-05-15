@@ -10,7 +10,7 @@ CREATE TABLE organizations
     city            VARCHAR(255) NOT NULL,
     is_active        BOOLEAN      NOT NULL,
     direction       VARCHAR(255),
-    numberOfOffices INT
+    number_of_offices INT
 );
 
 CREATE TABLE employees
