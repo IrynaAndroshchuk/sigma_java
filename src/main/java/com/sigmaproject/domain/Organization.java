@@ -12,9 +12,9 @@ public class Organization {
     private Boolean isActive;
     private String direction;
     private Integer numberOfOffices;
-    private Employee employee;
+    private Employee employees;
 
-    public Organization(String name, String phoneNumber, String address, String region, String country, String city, Boolean isActive, String direction, Integer numberOfOffices, Employee employee) {
+    public Organization(String name, String phoneNumber, String address, String region, String country, String city, Boolean isActive, String direction, Integer numberOfOffices, Employee employees) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -24,7 +24,7 @@ public class Organization {
         this.isActive = isActive;
         this.direction = direction;
         this.numberOfOffices = numberOfOffices;
-        this.employee = employee;
+        this.employees = employees;
     }
 
     public String getName() {
@@ -75,7 +75,7 @@ public class Organization {
         this.city = city;
     }
 
-    public Boolean getActive() {
+    public Boolean getIsActivective() {
         return isActive;
     }
 
@@ -100,11 +100,11 @@ public class Organization {
     }
 
     public Employee getEmployee() {
-        return employee;
+        return employees;
     }
 
     public void setEmployee(Employee employee) {
-        this.employee = employee;
+        this.employees = employee;
     }
 
     @Override
@@ -121,11 +121,11 @@ public class Organization {
                 Objects.equals(isActive, that.isActive) &&
                 Objects.equals(direction, that.direction) &&
                 Objects.equals(numberOfOffices, that.numberOfOffices) &&
-                Objects.equals(employee, that.employee);
+                Objects.equals(employees, that.employees);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, phoneNumber, address, region, country, city, isActive, direction, numberOfOffices, employee);
+        return Objects.hash(name, phoneNumber, address, region, country, city, isActive, direction, numberOfOffices, employees);
     }
 }

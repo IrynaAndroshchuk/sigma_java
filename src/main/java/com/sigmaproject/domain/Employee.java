@@ -32,11 +32,11 @@ public class Employee {
         this.surname = surname;
     }
 
-    public Boolean getMarried() {
+    public Boolean getIsMarried() {
         return isMarried;
     }
 
-    public void setMarried(Boolean married) {
+    public void setIsMarried(Boolean married) {
         isMarried = married;
     }
 
