@@ -1,5 +1,6 @@
 package com.sigmaproject.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Organization {
@@ -12,9 +13,9 @@ public class Organization {
     private Boolean isActive;
     private String direction;
     private Integer numberOfOffices;
-    private Employee employee;
+    private List<Employee> employees;
 
-    public Organization(String name, String phoneNumber, String address, String region, String country, String city, Boolean isActive, String direction, Integer numberOfOffices, Employee employee) {
+    public Organization(String name, String phoneNumber, String address, String region, String country, String city, Boolean isActive, String direction, Integer numberOfOffices) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -24,7 +25,6 @@ public class Organization {
         this.isActive = isActive;
         this.direction = direction;
         this.numberOfOffices = numberOfOffices;
-        this.employee = employee;
     }
 
     public String getName() {
@@ -75,7 +75,7 @@ public class Organization {
         this.city = city;
     }
 
-    public Boolean getActive() {
+    public Boolean getIsActivective() {
         return isActive;
     }
 
@@ -99,12 +99,12 @@ public class Organization {
         this.numberOfOffices = numberOfOffices;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public List<Employee> getEmployee() {
+        return employees;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee(List<Employee> employee) {
+        this.employees = employee;
     }
 
     @Override
@@ -121,11 +121,11 @@ public class Organization {
                 Objects.equals(isActive, that.isActive) &&
                 Objects.equals(direction, that.direction) &&
                 Objects.equals(numberOfOffices, that.numberOfOffices) &&
-                Objects.equals(employee, that.employee);
+                Objects.equals(employees, that.employees);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, phoneNumber, address, region, country, city, isActive, direction, numberOfOffices, employee);
+        return Objects.hash(name, phoneNumber, address, region, country, city, isActive, direction, numberOfOffices, employees);
     }
 }
