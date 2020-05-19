@@ -1,7 +1,6 @@
 package com.sigmaproject.repositories;
 
 import com.sigmaproject.domain.Employee;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -18,7 +17,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    @Autowired
     public EmployeeRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
