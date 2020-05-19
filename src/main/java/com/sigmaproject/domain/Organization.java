@@ -1,5 +1,6 @@
 package com.sigmaproject.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Organization {
@@ -12,9 +13,9 @@ public class Organization {
     private Boolean isActive;
     private String direction;
     private Integer numberOfOffices;
-    private Employee employees;
+    private List<Employee> employees;
 
-    public Organization(String name, String phoneNumber, String address, String region, String country, String city, Boolean isActive, String direction, Integer numberOfOffices, Employee employees) {
+    public Organization(String name, String phoneNumber, String address, String region, String country, String city, Boolean isActive, String direction, Integer numberOfOffices) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -24,7 +25,6 @@ public class Organization {
         this.isActive = isActive;
         this.direction = direction;
         this.numberOfOffices = numberOfOffices;
-        this.employees = employees;
     }
 
     public String getName() {
@@ -99,11 +99,11 @@ public class Organization {
         this.numberOfOffices = numberOfOffices;
     }
 
-    public Employee getEmployee() {
+    public List<Employee> getEmployee() {
         return employees;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(List<Employee> employee) {
         this.employees = employee;
     }
 
