@@ -14,4 +14,6 @@ public interface OrganizationRepository {
     Organization update(Long id, Organization organization);
 
     void delete(Long id);
+
+    public List<String> getCountriesList(String region, Integer numberOfDoctors);
 }

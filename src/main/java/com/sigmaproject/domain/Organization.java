@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Organization {
+    private Long id;
     private String name;
     private String phoneNumber;
     private String address;
@@ -25,6 +26,10 @@ public class Organization {
         this.isActive = isActive;
         this.direction = direction;
         this.numberOfOffices = numberOfOffices;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {

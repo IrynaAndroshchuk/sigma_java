@@ -27,16 +27,22 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
+    public List<Employee> findByOrganization(long organizationId) {
+        return jdbcTemplate.query("SELECT * FROM employees WHERE organization_id = ?;", ROW_MAPPER, organizationId);
+    }
+
+    @Override
     public Employee insert(Employee employee) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement ps =
-                    connection.prepareStatement("insert into employees(name, surname, is_married, experience) values (?, ?, ?, ?)",
+                    connection.prepareStatement("insert into employees(name, surname, position, is_married, experience) values (?, ?, ?, ?, ?)",
                             new String[]{"id"});
             ps.setString(1, employee.getName());
             ps.setString(2, employee.getSurname());
-            ps.setBoolean(3, employee.getIsMarried());
-            ps.setInt(4, employee.getExperience());
+            ps.setString(3, employee.getPosition());
+            ps.setBoolean(4, employee.getIsMarried());
+            ps.setInt(5, employee.getExperience());
             return ps;
         }, keyHolder);
         long employeeId = keyHolder.getKey().longValue();
@@ -50,8 +56,8 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Override
     public Employee update(Long id, Employee employee) {
-        jdbcTemplate.update("update employees set name = ?, surname = ?, is_married = ?, experience = ? where id = ?",
-                employee.getName(), employee.getSurname(), employee.getIsMarried(), employee.getExperience(), id);
+        jdbcTemplate.update("update employees set name = ?, surname = ?, position = ?, is_married = ?, experience = ? where id = ?",
+                employee.getName(), employee.getSurname(), employee.getPosition(), employee.getIsMarried(), employee.getExperience(), id);
         return getOne(id);
     }
 
@@ -59,4 +65,11 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     public void delete(Long id) {
         jdbcTemplate.update("DELETE FROM employees where id = ?", id);
     }
+
+    @Override
+    public void addOrganization(long organizationId, Employee employee) {
+        jdbcTemplate.update("update employees set organization_id = ? where id = ?",
+                organizationId, employee.getId());
+    }
 }
+
