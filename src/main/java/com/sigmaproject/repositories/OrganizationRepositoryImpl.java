@@ -68,4 +68,17 @@ public class OrganizationRepositoryImpl implements OrganizationRepository {
     public void delete(Long id) {
         jdbcTemplate.update("DELETE FROM organizations where id = ?", id);
     }
+
+    @Override
+    public List<String> getCountriesList(String region, Integer numberOfDoctors) {
+        return jdbcTemplate.query(
+                "SELECT organizations.country FROM organizations INNER JOIN employees e ON organizations.id = e.organization_id AND e.position = ? WHERE region = '?' GROUP BY  organizations.id having count(organizations.id ORDER BY country) > ?",
+                (rs, rowNum) -> rs.getString("country"),
+                "doctor",
+                region,
+                numberOfDoctors
+        );
+    }
+
 }
+

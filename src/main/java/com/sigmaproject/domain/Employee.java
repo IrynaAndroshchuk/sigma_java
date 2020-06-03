@@ -3,17 +3,24 @@ package com.sigmaproject.domain;
 import java.util.Objects;
 
 public class Employee {
+    private Long id;
     private String name;
     private String surname;
+    private String position;
     private Boolean isMarried;
     //    experience in month
-   private Integer experience;
+    private Integer experience;
 
-    public Employee(String name, String surname, Boolean isMarried, Integer experience) {
+    public Employee(String name, String surname, Boolean isMarried, Integer experience, String position) {
         this.name = name;
         this.surname = surname;
         this.isMarried = isMarried;
         this.experience = experience;
+        this.position = position;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -46,6 +53,14 @@ public class Employee {
 
     public void setExperience(Integer experience) {
         this.experience = experience;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     @Override

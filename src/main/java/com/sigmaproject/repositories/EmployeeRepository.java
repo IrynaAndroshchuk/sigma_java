@@ -2,16 +2,20 @@ package com.sigmaproject.repositories;
 
 import com.sigmaproject.domain.Employee;
 
-import java.util.List;
+        import java.util.List;
 
 public interface EmployeeRepository {
     List<Employee> findAll();
 
+    List<Employee> findByOrganizationId(Long organizationId);
+
     Employee insert(Employee employee);
 
-    Employee getOne(long employee);
+    Employee getOne(Long employee);
 
     Employee update(Long id, Employee employee);
 
-    void delete(Long id);
+    public void delete(Long id);
+
+    public void addOrganization(Long organizationId, Employee employee);
 }
