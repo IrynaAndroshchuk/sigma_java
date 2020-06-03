@@ -7,15 +7,15 @@ import com.sigmaproject.domain.Employee;
 public interface EmployeeRepository {
     List<Employee> findAll();
 
-    List<Employee> findByOrganization(long organizationId);
+    List<Employee> findByOrganizationId(Long organizationId);
 
     Employee insert(Employee employee);
 
-    Employee getOne(long employee);
+    Employee getOne(Long employee);
 
     Employee update(Long id, Employee employee);
 
     public void delete(Long id);
 
-    public void addOrganization(long organizationId, Employee employee);
+    public void addOrganization(Long organizationId, Employee employee);
 }

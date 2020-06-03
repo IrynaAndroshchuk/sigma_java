@@ -15,4 +15,8 @@ public interface OrganizationService {
     Organization update(Long id, Organization employee);
 
     public List<String> getCountriesList(String region, Integer numberOfDoctors);
+
+    public Organization create(Organization organization);
+
+    public void delete(Long id);
 }

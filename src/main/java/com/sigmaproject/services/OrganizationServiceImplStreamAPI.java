@@ -22,7 +22,7 @@ public class OrganizationServiceImplStreamAPI extends OrganizationServiceImpl {
 
         return organizations.stream()
                 .filter(organization -> {
-                    List<Employee> employees = employeeRepository.findByOrganization(organization.getId());
+                    List<Employee> employees = employeeRepository.findByOrganizationId(organization.getId());
 
                     return numberOfDoctors > employees.size();
                 })

@@ -27,7 +27,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public List<Employee> findByOrganization(long organizationId) {
+    public List<Employee> findByOrganizationId(Long organizationId) {
         return jdbcTemplate.query("SELECT * FROM employees WHERE organization_id = ?;", ROW_MAPPER, organizationId);
     }
 
@@ -50,7 +50,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public Employee getOne(long id) {
+    public Employee getOne(Long id) {
         return jdbcTemplate.queryForObject("SELECT * FROM organizations WHERE id = ?", ROW_MAPPER, id);
     }
 
@@ -67,7 +67,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public void addOrganization(long organizationId, Employee employee) {
+    public void addOrganization(Long organizationId, Employee employee) {
         jdbcTemplate.update("update employees set organization_id = ? where id = ?",
                 organizationId, employee.getId());
     }
