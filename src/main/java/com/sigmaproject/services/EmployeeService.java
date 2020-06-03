@@ -9,5 +9,9 @@ public interface EmployeeService {
 
     List<Employee> findAll();
 
+    public Employee create(Employee employee);
+
     Employee update(Long id, Employee employee);
+
+    public void delete(Long id);
 }

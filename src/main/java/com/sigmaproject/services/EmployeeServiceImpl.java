@@ -29,7 +29,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee create(Employee employee) {
+
+        return employeeRepository.insert(employee);
+    }
+
+    @Override
     public Employee update(Long id, Employee employee) {
         return employeeRepository.update(id, employee);
+    }
+
+    @Override
+    public void delete(Long id) {
+        employeeRepository.delete(id);
     }
 }
