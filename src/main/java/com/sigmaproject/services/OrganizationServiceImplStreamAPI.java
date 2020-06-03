@@ -21,12 +21,12 @@ public class OrganizationServiceImplStreamAPI extends OrganizationServiceImpl {
         List<Organization> organizations = organizationRepository.findAll();
 
         return organizations.stream()
+                .filter(organization -> "Europe".equals(organization.getCountry()))
                 .filter(organization -> {
                     List<Employee> employees = employeeRepository.findByOrganizationId(organization.getId());
 
                     return numberOfDoctors > employees.size();
                 })
-                .filter(organization -> "Europe".equals(organization.getCountry()))
                 .map(organization -> organization.getCountry())
                 .sorted()
                 .collect(Collectors.toList());
