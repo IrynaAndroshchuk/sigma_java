@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public OrganizationService OrganizationService(OrganizationRepository organizationRepository, EmployeeRepository employeeRepository) {
+    public OrganizationService organizationService(OrganizationRepository organizationRepository, EmployeeRepository employeeRepository) {
         return new OrganizationServiceImpl(organizationRepository, employeeRepository);
     }
 }

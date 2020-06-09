@@ -12,37 +12,37 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/organizations", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrganizationController {
-    private final OrganizationService OrganizationService;
+    private final OrganizationService organizationService;
 
     @Autowired
     public OrganizationController(OrganizationService organizationService) {
-        this.OrganizationService = organizationService;
+        this.organizationService = organizationService;
     }
 
     @GetMapping(value = "/{id}")
     public Organization getOrganization(@PathVariable Long id) {
-        return OrganizationService.getOrganization(id);
+        return organizationService.getOrganization(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Organization createOrganization(@RequestBody Organization organization) {
-        return OrganizationService.create(organization);
+        return organizationService.create(organization);
     }
 
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteOrganization(@PathVariable Long id) {
-        OrganizationService.delete(id);
+        organizationService.delete(id);
     }
 
     @GetMapping
     public List<Organization> getOrganizations() {
-        return OrganizationService.findAll();
+        return organizationService.findAll();
     }
 
     @PutMapping(value = "{id}")
     public Organization updateOrganization(@PathVariable Long id, @RequestBody Organization organization) {
-        return OrganizationService.update(id, organization);
+        return organizationService.update(id, organization);
     }
 }

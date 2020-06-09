@@ -29,8 +29,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee create(Employee employee) {
-
+    public Employee create(Long organizationId, Employee employee) {
+        employeeRepository.addOrganization(organizationId, employee);
         return employeeRepository.insert(employee);
     }
 
@@ -42,5 +42,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void delete(Long id) {
         employeeRepository.delete(id);
+    }
+
+    @Override
+    public void addOrganization(Long organizationId, Employee employee) {
+        employeeRepository.addOrganization(organizationId, employee);
     }
 }
